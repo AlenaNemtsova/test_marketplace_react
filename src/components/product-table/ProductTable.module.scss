@@ -1,0 +1,9 @@
+.table {
+  max-width: 80%;
+  background-color: lightgray;
+  border-collapse: collapse;
+
+  &__headItem {
+    background-color: bisque;
+  }
+}
