@@ -1,21 +1,18 @@
 interface ProductBrandSelectionProps {
-  onChange: () => void;
+  onChange: (type: string | undefined) => void;
 }
 
 const ProductBrandSelection = ({ onChange }: ProductBrandSelectionProps) => {
-  const selectChange = (
-    event: React.ChangeEventHandler<HTMLSelectElement>
-  ): void => {
+  const filter = (event: React.ChangeEvent<HTMLSelectElement>): void => {
     const value = event.target.value;
     onChange(value);
   };
 
   return (
     <>
-      <select onChange={selectChange} name="" id="" defaultValue="none">
-        <option value="none" disabled>
-          Choose a brand
-        </option>
+      <label htmlFor="filter">Filter: </label>
+      <select onChange={filter} name="filter" id="">
+        <option value="">--Choose a brand--</option>
         <option value="apple">Apple</option>
         <option value="samsung">Samsung</option>
       </select>

@@ -1,16 +1,40 @@
 import ProductRow from "../product-row/ProductRow";
 import { ProductArrayProps } from "../../types/ProductArrayProps";
-import { ProductBrandSelectionProps } from "../../types/ProductBrandSelectionProps";
 import styles from "./ProductTable.module.scss";
+
+import { useState } from "react";
 
 export type ProductTableProps = {
   rows: ProductArrayProps;
-  selectedBrand: ProductBrandSelectionProps;
 };
 
-const ProductTable = ({ rows, selectedBrand }: ProductTableProps) => {
+const ProductTable = ({ rows }: ProductTableProps) => {
+  const [filteredRows, setRows] = useState(rows);
+
+  const filter = (event: React.ChangeEvent<HTMLSelectElement>): void => {
+    const value = event.target.value;
+
+    if (value) {
+      setRows([
+        ...rows.filter((row) => {
+          return Object.values(row).join("").toLowerCase().includes(value);
+        }),
+      ]);
+    } else {
+      setRows(rows);
+    }
+  };
+
   return (
     <>
+      {/* test select */}
+      <select onChange={filter} name="filter" id="">
+        <option value="">Select-test</option>
+        <option value="apple">Apple</option>
+        <option value="samsung">Samsung</option>
+      </select>
+      {/* test select */}
+
       <table className={styles.table}>
         <thead className={styles.table__head}>
           <tr>
@@ -21,7 +45,7 @@ const ProductTable = ({ rows, selectedBrand }: ProductTableProps) => {
           </tr>
         </thead>
         <tbody>
-          {rows.map((row, index) => (
+          {filteredRows.map((row, index) => (
             <ProductRow key={index} row={row} />
           ))}
         </tbody>
