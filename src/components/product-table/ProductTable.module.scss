@@ -1,9 +1,39 @@
+.tableWrapper {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  overflow-x: auto;
+}
+
 .table {
-  max-width: 80%;
-  background-color: lightgray;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
   border-collapse: collapse;
+  text-align: center;
 
   &__headItem {
-    background-color: bisque;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    background-color: rgb(144, 148, 151);
+    border: 1px solid rgb(144, 148, 151);
+  }
+
+  &__data {
+    height: 200px;
+    width: 250px;
+    padding: 20px;
+    border: 1px solid rgb(144, 148, 151);
+  }
+
+  &__productImage {
+    max-width: 300px;
+    max-height: 300px;
+  }
+}
+
+@media (pointer: fine) {
+  .table__bodyRow:hover {
+    background-color: rgba(144, 148, 151, 0.1);
   }
 }

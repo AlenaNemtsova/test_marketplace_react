@@ -1,5 +1,5 @@
 import { ProductProps } from "../../types/ProductProps";
-import styles from "./ProductRow.module.scss";
+import styles from "../product-table/ProductTable.module.scss";
 
 export type ProductRowProps = {
   row: ProductProps;
@@ -8,13 +8,17 @@ export type ProductRowProps = {
 const ProductRow = ({ row }: ProductRowProps) => {
   return (
     <>
-      <tr>
-        <td>{row.brand}</td>
-        <td>{row.title}</td>
-        <td>
-          <img className={styles.productImage} src={row.images[0]} alt="" />
+      <tr className={styles.table__bodyRow}>
+        <td className={styles.table__data}>{row.brand}</td>
+        <td className={styles.table__data}>{row.title}</td>
+        <td className={styles.table__data}>
+          <img
+            className={styles.table__productImage}
+            src={row.images[0]}
+            alt=""
+          />
         </td>
-        <td>{row.price}</td>
+        <td className={styles.table__data}>{row.price}</td>
       </tr>
     </>
   );

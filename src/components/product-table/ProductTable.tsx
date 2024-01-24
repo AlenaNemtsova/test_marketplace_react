@@ -34,22 +34,23 @@ const ProductTable = ({ rows }: ProductTableProps) => {
         <option value="samsung">Samsung</option>
       </select>
       {/* test select */}
-
-      <table className={styles.table}>
-        <thead className={styles.table__head}>
-          <tr>
-            <th className={styles.table__headItem}>Brand</th>
-            <th className={styles.table__headItem}>Title</th>
-            <th className={styles.table__headItem}>Image</th>
-            <th className={styles.table__headItem}>Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredRows.map((row, index) => (
-            <ProductRow key={index} row={row} />
-          ))}
-        </tbody>
-      </table>
+      <div className={styles.tableWrapper}>
+        <table className={styles.table}>
+          <thead className={styles.table__head}>
+            <tr>
+              <th className={styles.table__headItem}>Brand</th>
+              <th className={styles.table__headItem}>Title</th>
+              <th className={styles.table__headItem}>Image</th>
+              <th className={styles.table__headItem}>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredRows.map((row, index) => (
+              <ProductRow key={index} row={row} />
+            ))}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 };
