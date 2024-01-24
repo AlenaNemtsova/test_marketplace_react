@@ -2,12 +2,11 @@ import { useState } from "react";
 import { productArray } from "../../mock";
 import ProductBrandSelection from "../product-brand-selection/ProductBrandSelection";
 import ProductTable from "../product-table/ProductTable";
-import { ProductBrandSelectionProps } from "../../types/ProductBrandSelectionProps";
 
 const FilterableProductTable = () => {
   const [filteredRows, setRows] = useState(productArray);
 
-  const handleSelectBrand = (value: ProductBrandSelectionProps) => {
+  const handleSelectBrand = (value: string | undefined) => {
     if (value) {
       setRows([
         ...productArray.filter((row) => {
