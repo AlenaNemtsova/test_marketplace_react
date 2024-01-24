@@ -12,8 +12,8 @@ const ProductBrandSelection = ({ selectBrand }: ProductBrandSelectionProps) => {
 
   return (
     <>
-      <label htmlFor="filter">Filter: </label>
-      <select onChange={handleChangeValue} name="filter" id="">
+      <label htmlFor="brand-select">Filter: </label>
+      <select onChange={handleChangeValue} name="brands" id="brand-select">
         <option value="">--Choose a brand--</option>
         <option value="apple">Apple</option>
         <option value="samsung">Samsung</option>
