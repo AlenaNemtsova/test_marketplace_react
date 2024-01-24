@@ -6,4 +6,5 @@ cd test_marketplace_react
 npm install
 npm run dev
 ```
-## Demo: https://alenanemtsova.github.io/test_marketplace_react/
+## Demo: 
+https://alenanemtsova.github.io/test_marketplace_react/
