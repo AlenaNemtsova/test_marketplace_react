@@ -1,5 +1,5 @@
 The test task of implementing a product table with a sorting option.
-This project is made on React + TypeScript + Vite.
+This project is made in React + TypeScript + Vite.
 ## Project Setup: 
 ```
 cd test_marketplace_react
